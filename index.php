@@ -1,2 +1,7 @@
-<h1>Hello, <?php echo getUser(); ?>!</h1>
-<a href="/logout.php">Log Out!</a>
+<?php
+
+require __DIR__ . '/model/news.php';
+
+$items = News_getAll();
+
+include __DIR__ . '/views/index.php';
