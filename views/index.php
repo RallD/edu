@@ -8,7 +8,8 @@
 	<h1>Новости</h1>
 	<?php foreach($items as $item): ?>
 	<div>
-		<h2><?php echo $item['title']; ?></h2>
+		<h2><a href="/article.php?id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a></h2>
+		<p><?php echo $item['date']; ?></p>
 		<p><?php echo $item['article']; ?></p>
 	</div>
 	<?php endforeach; ?>
