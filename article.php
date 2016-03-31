@@ -1,12 +1,16 @@
 <?php
 Header("Content-Type: text/html; charset=utf-8");
 
-require __DIR__ . '/model/news.php';
+require __DIR__ . '/model/Db.class.php';
+require __DIR__ . '/model/Article.class.php';
 
 if($_GET['id']){
 	$id = $_GET['id'];
 }
 
-$items = News_getArticle($id);
+$db = new Db();
+$news_art = new News;
+
+$items = $news_art->showArticle($id);
 
 include __DIR__ . '/views/article.php';
