@@ -1,11 +1,7 @@
 <?php
 
-require __DIR__ . '/model/Db.class.php';
-require __DIR__ . '/model/Article.class.php';
+require __DIR__ . '/model/news.php';
 
-$db = new Db();
-$news_art = new News;
-
-$items = $news_art->showAll();
+$items = News_getAll();
 
 include __DIR__ . '/views/index.php';

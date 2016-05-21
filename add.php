@@ -1,11 +1,7 @@
 <?php
 Header("Content-Type: text/html; charset=utf-8");
 
-require __DIR__ . '/model/Db.class.php';
-require __DIR__ . '/model/Article.class.php';
-
-$db = new Db();
-$news_art = new News;
+require __DIR__ . '/model/news.php';
 
 if(!empty($_POST)){
 	$data = array();
@@ -16,7 +12,7 @@ if(!empty($_POST)){
 		$data['article'] = $_POST['article']; 
 	}
 	if(isset($data['title']) && isset($data['article'])){
-		$news_art->addArticle($data);
+		News_insert($data);
 		header('Location: /');
 		die;
 	}

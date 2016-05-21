@@ -9,7 +9,6 @@
 	<?php foreach($items as $item): ?>
 	<div>
 		<h2><a href="/article.php?id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a></h2>
-		<p><a href="/article_mod.php?id=<?php echo $item['id']; ?>">Редактировать</a></p>
 		<p><?php echo $item['date']; ?></p>
 		<p><?php echo $item['article']; ?></p>
 	</div>
