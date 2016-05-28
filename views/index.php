@@ -11,6 +11,7 @@
 		<h2><a href="/article.php?id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a></h2>
 		<p><?php echo $item['date']; ?></p>
 		<p><?php echo $item['article']; ?></p>
+		<p><a href="/edit.php?id=<?php echo $item['id']; ?>">Редактировать</a></p>
 	</div>
 	<?php endforeach; ?>
 	

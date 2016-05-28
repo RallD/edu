@@ -12,10 +12,13 @@ if(!empty($_POST)){
 	if(!empty($_POST['article'])){
 		$data['article'] = $_POST['article']; 
 	}
+	if(!empty($_POST['id'])){
+		$data['id'] = $_POST['id']; 
+	}
 	if(isset($data['title']) && isset($data['article'])){
 		$news = new News();
 		$db = new Db();
-		$sql = $news->Insert($data);
+		$sql = $news->Update($data);
 		$db->Exec($sql);
 		header('Location: /');
 		die;

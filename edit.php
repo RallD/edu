@@ -13,4 +13,4 @@ $db = new Db();
 $sql = $news->GetOne($id);
 $items = $db->Query($sql);
 
-include __DIR__ . '/views/article.php';
+include __DIR__ . '/views/edit.php';
