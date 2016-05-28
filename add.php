@@ -2,7 +2,6 @@
 Header("Content-Type: text/html; charset=utf-8");
 
 require __DIR__ . '/model/News.php';
-require __DIR__ . '/functions/Db.php';
 
 if(!empty($_POST)){
 	$data = array();
@@ -14,9 +13,7 @@ if(!empty($_POST)){
 	}
 	if(isset($data['title']) && isset($data['article'])){
 		$news = new News();
-		$db = new Db();
-		$sql = $news->Insert($data);
-		$db->Exec($sql);
+		$news->Insert($data);
 		header('Location: /');
 		die;
 	}

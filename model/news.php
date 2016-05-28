@@ -1,10 +1,17 @@
 <?php
 
 require_once __DIR__ . '/Article.php';
+require_once __DIR__ . '/../functions/Db.php';
 
 class News extends Article{
-	public $title;
-	public $text;
+	private $db;
+	public function __construct(){
+		$this->db = new Db();
+	}
+	public function GetAll(){
+		$sql = 'SELECT * FROM news ORDER BY date DESC';
+		return $this->db->Query($sql);
+	}
 	public function Insert($data){
 		$sql = "
 			INSERT INTO news
@@ -12,18 +19,15 @@ class News extends Article{
 			VALUES
 			('" . $data['title'] . "', '" . $data['article'] . "', CURRENT_TIMESTAMP())
 		";
-		return $sql;
+		return $this->db->Exec($sql);
 	}
-	public function GetAll(){
-		$sql = 'SELECT * FROM news ORDER BY date DESC';
-		return $sql;
-	}
+
 	public function GetOne($id){
 		$sql = "SELECT * FROM news WHERE id='".$id."' ";
-		return $sql;
+		return $this->db->Query($sql);
 	}
 	public function Update($data){
 		$sql = "UPDATE news SET title = '" . $data['title'] . "', article = '" . $data['article'] . "' WHERE id='".$data['id']."' ";
-		return $sql;
+		return $this->db->Exec($sql);
 	}
 }
