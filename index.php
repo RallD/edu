@@ -1,8 +1,7 @@
 <?php
 
-require __DIR__ . '/model/News.php';
+require_once __DIR__ . '/models/News.php';
 
-$news = new News();
-$items = $news->GetAll();
+$items = News::getAll();
 
 include __DIR__ . '/views/index.php';
