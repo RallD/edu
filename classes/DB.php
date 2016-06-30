@@ -5,7 +5,7 @@ class DB{
 		mysql_connect('localhost', 'root', '');
 		mysql_select_db('albert');
 	}
-	public function query($sql, $class = 'stdClass'){
+	public function queryAll($sql, $class = 'stdClass'){
 		$res = mysql_query($sql);
 		if(false === $res){
 			return false;
@@ -15,5 +15,8 @@ class DB{
 			$ret[] =$row;
 		}
 		return $ret;
+	}
+	public function queryOne($sql, $class = 'stdClass'){
+		return $this->queryAll($sql, $class)[0];
 	}
 }
