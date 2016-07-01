@@ -19,4 +19,7 @@ class DB{
 	public function queryOne($sql, $class = 'stdClass'){
 		return $this->queryAll($sql, $class)[0];
 	}
+	public function queryInsert($sql){
+		return $res = mysql_query($sql);
+	}
 }
