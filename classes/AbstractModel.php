@@ -15,12 +15,4 @@ abstract class AbstractModel{
 		$sql = 'SELECT * FROM ' . static::$table . ' WHERE id=' . $id;
 		return $db->queryOne($sql, static::$class);
 	}
-	public static function newsInsert($data){
-		$db = new DB;
-		$sql = "INSERT INTO " . static::$table . " (title, article, date)
-			VALUES
-			('" . $data['title'] . "', '" . $data['article'] . "', CURRENT_TIMESTAMP())
-		";
-		return $db->queryInsert($sql);
-	}
 }

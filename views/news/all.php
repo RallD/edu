@@ -5,7 +5,7 @@
 	  <meta charset="utf-8" />
 	</head>
 	<body>
-	<?php foreach($items as $item): ?>
+	<?php foreach($news as $item): ?>
 		<h1><?= $item->title; ?></h1>
 		<div><?= $item->date; ?></div>
 		<div><?= $item->article; ?></div>

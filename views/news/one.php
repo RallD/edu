@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title>Конкретная новость ленты. <?= $item->title; ?></title>
+	  <title>Конкретная новость ленты. <?= $new->title; ?></title>
 	  <meta charset="utf-8" />
 	</head>
 	<body>
-		<h1><?= $item->title; ?></h1>
-		<div><?= $item->date; ?></div>
-		<div><?= $item->article; ?></div>
+		<h1><?= $new->title; ?></h1>
+		<div><?= $new->date; ?></div>
+		<div><?= $new->article; ?></div>
 	</body>
 </html>
 	
