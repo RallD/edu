@@ -12,9 +12,6 @@ class AdminController{
 			if(!empty($_POST['article'])){
 				$data['article'] = $_POST['article']; 
 			}
-			if($this->error == "error"){
-				$view->displayNews('error.php');
-			}
 			if(isset($data['title']) && isset($data['article'])){
 					News::newsInsert($data);  //Статический метод вставки новости
 					header('Location: /');

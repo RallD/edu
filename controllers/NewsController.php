@@ -15,7 +15,7 @@ class NewsController{
 		$view->displayNews('one.php');
 	 }
 	 public function actionIterator(){
-		$it = new myIterator;
+		$it = new myIteratorRight;
 		foreach($it as $key => $value) {
 			var_dump($key, $value);
 			echo "\n";
