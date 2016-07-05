@@ -3,12 +3,9 @@
 class NewsController{
 	
 	 public function actionAll(){
-		$db = new DB();
-		$res = $db->query(
-			'SELECT * FROM news WHERE id=:id',
-			[':id' => 12]
+		var_dump(
+			NewsModel::findOnebyId(12)
 		);
-		var_dump($res);
 		die;
 		/*$items = News::getAll();
 		$view = new View(); // создали объект 
